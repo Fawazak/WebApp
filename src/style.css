@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    background: transparent;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+body {
+    background: rgb(244, 240, 221);
+    overflow: hidden;
+    overflow-y: scroll;
+}
+#tsparticles {
+    /* position: relative;
+    width: 23%; */
+    height: 700px;
+    overflow: hidden;
+    z-index: -3;
+    /* border-radius: 1000%;
+      */
+    /* margin-bottom: 300rem; */
+    /* padding: 0;
+    top: -480px;
+    left: 140px; */
+
+    /* 
+     */
+  } 
+  #tsparticles2 {
+    position: absolute;
+    
+    top: 186.5rem;
+    left: 280px;
+    height: 60rem;
+    width: 59.5rem;
+    overflow: hidden; 
+    border-radius: 1000%;
+    
+}
+
+@font-face {
+    font-family: "Light";   /*Can be any text*/
+    src: local("blow"),
+      url("./fonts/blow.ttf") format("truetype");
+  }
+   

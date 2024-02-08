@@ -1,0 +1,116 @@
+#contactPage{
+    /* padding-top: 10px;
+    min-height: 40rem;
+    max-height: 80rem;
+    width: 100%;
+    max-width: 60rem;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 1; */
+}
+
+.contact{
+    /* background-color: rgb(144, 175, 142);
+    border-radius: 50%;
+    height: 50rem;
+    width: 55rem;
+    display: flex;
+    
+    justify-content: center;
+    flex-direction: column; */
+    
+    
+}
+
+.contactTitle{
+    font-size: 35px;
+    z-index: 2;
+}
+.contenDesc{
+    font-size: 18px;
+    font-weight: 300;
+    z-index: 2;
+    
+}
+.contactForm{
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50vw;
+    max-width: 60rem;
+    color: white;
+    z-index: 1;
+}
+
+.contactForm ::placeholder{
+    color: white;
+    z-index: 1;
+}
+
+.nameC,.email, .msg{
+    font-size: medium;
+    width: 70%;
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    background: rgb(106, 106, 106);
+    z-index: 1;
+}
+
+.submitBtn{
+    background: rgb(106, 106, 106);
+    border-radius: 0.5rem;
+    border: none;
+    margin: 2rem;
+    padding: 0.75rem 3.5rem;
+    color:white;
+    transition:  0.5s;
+    z-index: 1;
+}
+.submitBtn:hover{
+    color:white;
+    background-color: black;
+    z-index: 1;
+
+}
+.links{
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 1;
+}
+.link{
+    object-fit: cover;
+    height: 3rem;
+    width: 3rem;
+    margin: 0 0.75rem;
+}
+.link1{
+    position: relative;
+    object-fit: cover;
+    height: 2.4rem;
+    width: 2.4rem;
+    top: 4px;
+    margin: 0 0.75rem;
+    z-index: 1;
+}
+
+.footer {
+    width: 110vw;
+    height: 100%;
+    /* padding-top: 100px; */
+    background-color: rgb(106, 106, 106);
+    position: relative;
+    top: 250px;
+    align-items: center;
+    justify-content: center;
+    font-weight: 300;
+    font-size: small;
+    /* margin: 1rem; */
+}
