@@ -11,7 +11,7 @@ function P5Sketch() {
     let w;
     let xspacing = 12;
     const setup = (p5, canvasParentRef) => {
-        p5.createCanvas(1561, 200).parent(canvasParentRef)
+        p5.createCanvas(1561, 300).parent(canvasParentRef)
         
         p5.frameRate(30);
         p5.colorMode(p5.RGB, 255, 255, 255, 100);
@@ -52,7 +52,7 @@ function P5Sketch() {
         p5.fill(25, 90);
         p5.ellipseMode(p5.CENTER);
         for (let x = 0; x < yvalues.length; x++) {
-            p5.ellipse(x * xspacing, p5.width / 2 + yvalues[x]-700, 18, 18);
+            p5.ellipse(x * xspacing, p5.width / 2 + yvalues[x]-670, 18, 18);
         }
    
     }
