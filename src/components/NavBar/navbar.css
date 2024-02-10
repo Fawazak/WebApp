@@ -17,6 +17,7 @@
 }
 .menu{
     margin: 0 auto;
+    display: flex;
     
 }
 
@@ -37,6 +38,22 @@
 
 }
 
+.mobMenu{
+    display: none;
+    height: 40px;
+}
+
 /* .active{
-    color: red;
+    color: rgb(244, 240, 221);;
 } */
+
+@media screen and (max-width: 720px){
+    .mobMenu{
+        display: flex;
+    }
+    .menu{
+        display: none;
+    }
+    
+    
+}

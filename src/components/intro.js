@@ -37,7 +37,7 @@ const Intro = () => {
             
                 <div className="flex flex-col items-center mt-40 ">
                     <img src={logo} alt="logo" className="  h-80  "/>
-                    <div className=" w-[330px] h-full mr-4">
+                    <div className=" md:w-[330px] h-full mr-4 w-[160px]">
                     <Particles
             id="tsparticles"
             init={particlesInit}

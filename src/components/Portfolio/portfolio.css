@@ -95,7 +95,9 @@
     outline-offset: 4px;
     width: 90px;
     display: flex;
-    position: relative;
+   
+    margin-left: 300px;
+    /* position: relative; */
     left: 300px;
     bottom: 40px;
     /* margin-left: 300px; */

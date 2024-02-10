@@ -110,7 +110,7 @@ const sliderSettings = {
     return (
         <section id= 'skills' data-aos= "fade-in">
             <span className="skillTitle">Skills</span>
-            <div className="mt-20 w-full h-full  rounded-3xl">
+            <div className=" mt-20 w-full h-full  rounded-3xl">
                   <Slider {...sliderSettings}>
                     
                   {

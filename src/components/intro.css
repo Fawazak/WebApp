@@ -10,6 +10,7 @@
     font-family: "Light";
 }
 .logo{
+
     width: 40rem;
     padding: 5rem;
     object-fit: cover;
@@ -72,6 +73,17 @@
     
   }
   
+  @media screen and (max-width: 720px){
+    .logo{
+        display: flex;
+    }
+    .name{
+       font-size: 2rem;
+       margin-right: 30px;
+    }
+    
+    
+}
 /* @font-face {
 font-family: "Light";   /*Can be any text*/
 /* src: local("blow"),
