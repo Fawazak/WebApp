@@ -8,9 +8,11 @@
 }
 .titleP{
     font-size: 35px;
+    display: flex;
     font-weight: 700;
-    letter-spacing: 1.75px;
+    letter-spacing: 1.5px;
     text-align: center;
+    justify-content: center;
 }
 .projects{
     margin-top: 70px;
@@ -92,16 +94,9 @@
     background: hsl(340deg 100% 32%);
     border-radius: 12px;
     cursor: pointer;
-    outline-offset: 4px;
     width: 90px;
     display: flex;
-   
     margin-left: 300px;
-    /* position: relative; */
-    left: 300px;
-    bottom: 40px;
-    /* margin-left: 300px; */
-    /* margin-bottom: 100px; */
     
     
 }
@@ -131,4 +126,19 @@
     border-left: 30px solid rgb(184, 183, 183);
     border-right: 30px solid rgb(184, 183, 183);
     border-radius: 10px;
+}
+
+@media screen and (max-width: 720px){
+    .pContainer{
+        max-width: 330px;
+        height: 470px;
+        max-height: 400px;
+    }
+    .pDesc{
+        font-size: 12px;
+    }
+    .links2{
+        margin-left: 200px;
+        
+    }
 }

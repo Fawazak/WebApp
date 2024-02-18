@@ -1,12 +1,9 @@
-export const data = [{
-    "title": "Java/JavaFX",
-    "imageSrc": require("../assets/java.webp"),
-    
-},
+export const data = [,
 {
     "title": "Python",
     "imageSrc": require("../assets/python.png"),
 },
+
 {
     "title": "PostgreSQL",
     "imageSrc": require("../assets/PostgreSQL.png"),
@@ -18,6 +15,11 @@ export const data = [{
 {
     "title": "HTML",
     "imageSrc": require("../assets/HTML5_Badge_512.png"),
+},
+{
+    "title": "Java/JavaFX",
+    "imageSrc": require("../assets/java.webp"),
+    
 },
 {
     "title": "CSS",

@@ -51,14 +51,10 @@
     height: 22rem;
 }
 
-/* .whole{
-    padding-top: 50px;
-    
-} */
 
 .name{
     color: rgb(144, 175, 142);
-    font-size:3rem;
+    font-size: 3rem;
 }
 
 ::-moz-selection {
@@ -78,8 +74,8 @@
         display: flex;
     }
     .name{
-       font-size: 2rem;
-       margin-right: 30px;
+       font-size: 1.8rem;
+       display: flex;
     }
     
     

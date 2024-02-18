@@ -110,16 +110,16 @@ const sliderSettings = {
     return (
         <section id= 'skills' data-aos= "fade-in">
             <span className="skillTitle">Skills</span>
-            <div className=" mt-20 w-full h-full  rounded-3xl">
+            <div className=" mt-20 w-full h-full  rounded-3xl ">
                   <Slider {...sliderSettings}>
                     
                   {
                     data.map((skill, id) => {
                         
                         return <Card>
-                          <div className=" flex flex-col items-center bg-beige rounded-3xl border-4 border-sage p-5 gap-10 w-48">
+                          <div className=" flex flex-col items-center bg-beige rounded-3xl md:border-4 border-2 w-20 border-sage p-5  gap-10 md:w-48">
                             
-                            <h3 >{skill.title}</h3>
+                            <h3 className="md:text-xl text-sm ">{skill.title}</h3>
                             <img src = {skill.imageSrc} alt="logo" className="skillBarImg"/>
                           </div>
                           </Card>

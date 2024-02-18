@@ -32,12 +32,12 @@ const Intro = () => {
     }, []);
     return (
         
-            <div data-aos= "fade-in" className="intro flex flex-row h-screen ml-20 " >
+            <div data-aos= "fade-in" className="intro flex flex-row h-screen ml-20 mr-10" >
 
             
-                <div className="flex flex-col items-center mt-40 ">
+                <div className="flex flex-col items-center md:mt-40 mt-56 mr-6">
                     <img src={logo} alt="logo" className="  h-80  "/>
-                    <div className=" md:w-[330px] h-full mr-4 w-[160px]">
+                    <div className=" md:w-[330px] h-full mr-4 w-[100px]">
                     <Particles
             id="tsparticles"
             init={particlesInit}
@@ -123,7 +123,7 @@ const Intro = () => {
                     
                 </div>
                 
-                <div className="flex mb-40 ml-10 w-1/2 flex-col items-center justify-center ">
+                <div className="flex mb-40 md:ml-10 w-1/2 flex-col items-center justify-center ">
                     
                     <span className="name">Fawaz Al Khreisha</span> <br></br>
                     <span className="title">&#60;Software Engineer&#62;</span> <br></br>

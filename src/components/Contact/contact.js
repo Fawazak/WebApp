@@ -36,8 +36,8 @@ const Contact= ()=>{
             <div className="bg-sage rounded-full justify-center mt-40 z-10 border-4 border-black">
                 
             
-                <h1 className="contactTitle mt-10"> Contact Me</h1>
-                <span className="contenDesc"> Feel free to reach out to me through this form!</span>
+                <h1 className="contactTitle mt-10 md:text-4xl text-2xl font-bold"> Contact Me</h1>
+                <span className="md:text-xl text-lg p-4 font-light"> Feel free to reach out to me through this form!</span>
                 
                 <form className="contactForm" ref = {form} onSubmit={sendEmail}>
                     <input required type="text" className="nameC" placeholder="Name" name = 'your_name' />
@@ -64,7 +64,7 @@ const Contact= ()=>{
             
             
         </section>
-        <div className="absolute  mt-80 z-0">
+        <div className="absolute  mt-60 z-0 	">
             <P5Sketch/>
         </div>
     </div>

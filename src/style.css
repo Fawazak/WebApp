@@ -9,12 +9,13 @@
     text-decoration: none;
     background: transparent;
     font-family: 'Poppins', sans-serif;
+    
 
 }
 
 body {
     background: rgb(244, 240, 221);
-    overflow: hidden;
+    overflow-x: hidden;
     overflow-y: scroll;
 }
 #tsparticles {
