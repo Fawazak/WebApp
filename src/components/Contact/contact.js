@@ -36,14 +36,15 @@ const Contact= ()=>{
             <div className="bg-sage rounded-full justify-center mt-40 z-10 border-4 border-black">
                 
             
-                <h1 className="contactTitle mt-10 md:text-4xl text-2xl font-bold"> Contact Me</h1>
-                <span className="md:text-xl text-lg p-4 font-light"> Feel free to reach out to me through this form!</span>
+                <h1 className="contactTitle mt-10 md:text-4xl text-2xl font-bold m-6"> Contact Me</h1>
+                <span className="md:text-xl text-lg p-4 font-light "> Feel free to reach out to me through this form!</span>
                 
                 <form className="contactForm" ref = {form} onSubmit={sendEmail}>
                     <input required type="text" className="nameC" placeholder="Name" name = 'your_name' />
                     <input type="email" className="email" placeholder="Email" name = 'your_email'/>
                     <textarea required type="text" className="msg" rows="5" placeholder="Message" name = 'message' />
-                    <button type = 'submit' className="submitBtn">Submit</button>
+                    <button type="submit" className="bg-slate-200  rounded-xl p-4 m-6 w-1/6 text-black hover:bg-orange-100 transition duration-300 ease-in-out">Submit</button>
+
                     
                     <div className="links">
                         <a href = 'https://www.linkedin.com/in/fawaz-al-khreisha-136128219'>

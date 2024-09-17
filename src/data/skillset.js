@@ -36,6 +36,10 @@ export const data = [,
 {
     "title": "TypeScript",
     "imageSrc": require("../assets/Typescript_logo_2020.png"),
+},
+{
+    "title": "R",
+    "imageSrc": require("../assets/R_logo.svg.png"),
 }];
 
 export default data;

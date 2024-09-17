@@ -1,29 +1,4 @@
-#contactPage{
-    /* padding-top: 10px;
-    min-height: 40rem;
-    max-height: 80rem;
-    width: 100%;
-    max-width: 60rem;
-    margin: 0 auto;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    z-index: 1; */
-}
 
-.contact{
-    /* background-color: rgb(144, 175, 142);
-    border-radius: 50%;
-    height: 50rem;
-    width: 55rem;
-    display: flex;
-    
-    justify-content: center;
-    flex-direction: column; */
-    
-    
-}
 
 .contactTitle{
     font-size: 35px;
@@ -64,22 +39,8 @@
     z-index: 1;
 }
 
-.submitBtn{
-    background: rgb(106, 106, 106);
-    border-radius: 0.5rem;
-    border: none;
-    margin: 2rem;
-    padding: 0.75rem 3.5rem;
-    color:white;
-    transition:  0.5s;
-    z-index: 1;
-}
-.submitBtn:hover{
-    color:white;
-    background-color: black;
-    z-index: 1;
 
-}
+
 .links{
     display: flex;
     flex-wrap: wrap;

@@ -6,8 +6,14 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 import data from '../../data/skillset';
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import 'swiper/css/free-mode';
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import { Autoplay, Pagination, FreeMode } from 'swiper/modules';
 
 function Card({ children }) {
     // We add this ref to card element and use in onMouseMove event ...
@@ -96,37 +102,36 @@ const sliderSettings = {
   pauseOnHover: false, // Set autoplay speed in milliseconds (e.g., 3000ms = 3 seconds)
   // Experiment with different values
 };
-    var date = new Date();
-    var hour =  date.getHours();
-    var greeting;
-    if(hour >= 18){
-      greeting = 'Good Evening!'
-    }
-    else if(hour >= 12){
-      greeting = 'Good afternoon!'
-    } else if(hour >= 0){
-      greeting = 'Good Morning!'
-    }
+    
     return (
         <section id= 'skills' data-aos= "fade-in">
             <span className="skillTitle">Skills</span>
-            <div className=" mt-20 w-full h-full  rounded-3xl ">
-                  <Slider {...sliderSettings}>
-                    
+            <div className=" mt-20 w-full h-full  ">
+            <Swiper
+      
+      slidesPerView={5}
+      autoplay={{
+        delay: 800,
+        disableOnInteraction: false,
+      }}
+      freeMode={true}
+      modules={[Autoplay, Pagination, FreeMode]}
+      className="mySwiper"
+    >
                   {
                     data.map((skill, id) => {
                         
-                        return <Card>
+                        return <SwiperSlide>
                           <div className=" flex flex-col items-center bg-beige rounded-3xl md:border-4 border-2 w-20 border-sage p-5  gap-10 md:w-48">
                             
                             <h3 className="md:text-xl text-sm ">{skill.title}</h3>
                             <img src = {skill.imageSrc} alt="logo" className="skillBarImg"/>
-                          </div>
-                          </Card>
-
+                            
+                          </div></SwiperSlide>
                       })
                       } 
-                  </Slider>
+                      
+                  </Swiper>
                 </div>
             
     

@@ -1,13 +1,12 @@
 import {React, useEffect} from "react";
 import './intro.css'
 import logo from "../assets/logo.png"
-import MouseTracker from "./MouseTracker"
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import { ReactTyped } from "react-typed";
 import '../fonts/blow.ttf'
 import { useCallback } from "react";
 import Particles from "react-particles";
-//import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
 import { loadSlim } from "tsparticles-slim";
 
 
@@ -32,7 +31,8 @@ const Intro = () => {
     }, []);
     return (
         
-            <div data-aos= "fade-in" className="intro flex flex-row h-screen ml-20 mr-10" >
+            <div data-aos="fade-in" className="intro flex flex-row h-screen ml-20 mr-10">
+
 
             
                 <div className="flex flex-col items-center md:mt-40 mt-56 mr-6">
@@ -126,7 +126,7 @@ const Intro = () => {
                 <div className="flex mb-40 md:ml-10 w-1/2 flex-col items-center justify-center ">
                     
                     <span className="name">Fawaz Al Khreisha</span> <br></br>
-                    <span className="title">&#60;Software Engineer&#62;</span> <br></br>
+                    <ReactTyped className="title" strings={["&#60;Software Engineer&#62;"]} typeSpeed={100} loop />
 
                 </div>
             </div>
