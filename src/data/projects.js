@@ -3,7 +3,7 @@ export const data = [{
     "imageSrc": require("../assets/pool1.png"),
     "vidSrc": require("../assets/pool1.mov"),
     "description": "A Pool game using a plethora of design patterns to ensure quality code is written. The game can be run by using Gradle run.",
-    "skills":[ "Gradle", "Java", "GoF Patterns", "JavaFX"],
+    "skills":[ "Gradle", "Java", "Patterns", "JavaFX"],
     "demo": "",
     "source": "https://github.com/Fawazak/github-portfolio/tree/8c0fdbf6704d83a2826833637373e28aa4fe4fe5/Assignment2Final"
 },
@@ -12,7 +12,7 @@ export const data = [{
     "imageSrc": require("../assets/pool2.png"),
     "vidSrc": require("../assets/pool2.mov"),
     "description": "An extension of the Pool game using a plethora of design patterns to ensure quality code is written. The game can be run by using Gradle run.",
-    "skills":[ "Gradle", "Java", "GoF Patterns", "JavaFX"],
+    "skills":[ "Gradle", "Java", "Patterns", "JavaFX"],
     "demo": "",
     "source": "https://github.com/Fawazak/github-portfolio/tree/8c0fdbf6704d83a2826833637373e28aa4fe4fe5/Assignment2Final"
 },
