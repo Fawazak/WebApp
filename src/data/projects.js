@@ -1,29 +1,26 @@
 export const data = [{
-    "title": "Pool Game",
-    "imageSrc": require("../assets/pool1.png"),
-    "vidSrc": require("../assets/pool1.mov"),
-    "description": "A Pool game using a plethora of design patterns to ensure quality code is written. The game can be run by using Gradle run.",
-    "skills":[ "Gradle", "Java", "Patterns", "JavaFX"],
-    "demo": "",
-    "source": "https://github.com/Fawazak/github-portfolio/tree/8c0fdbf6704d83a2826833637373e28aa4fe4fe5/Assignment2Final"
-},
+    title: "Pilates Studio",
+    description: "A full-stack web app for a pilates studio with user authentication, a members-only video library, and a booking system.",
+    skills: ["React", "Firebase", "Firestore"],
+    imageSrc: require("../assets/pilates-thumb.png"),
+    vidSrc: require("../assets/pilates.mp4"),
+    source: ""
+  },
+  {
+    title: "Psychology Portfolio",
+    description: "A clean, responsive portfolio website for a psychologist showcasing their practice, approach, and services.",
+    skills: ["React", "CSS"],
+    imageSrc: require("../assets/psychology-thumb.png"),
+    vidSrc: require("../assets/psychology2.mov"),
+    source: ""
+  },
 {
-    "title": "Pool Game 2",
-    "imageSrc": require("../assets/pool2.png"),
-    "vidSrc": require("../assets/pool2.mov"),
-    "description": "An extension of the Pool game using a plethora of design patterns to ensure quality code is written. The game can be run by using Gradle run.",
-    "skills":[ "Gradle", "Java", "Patterns", "JavaFX"],
-    "demo": "",
-    "source": "https://github.com/Fawazak/github-portfolio/tree/8c0fdbf6704d83a2826833637373e28aa4fe4fe5/Assignment2Final"
-},
-{
-    "title": "This Website!",
-    "imageSrc": require("../assets/website.png"),
-    "vidSrc": require("../assets/web.mov"),
-    "description": "This website was created from scratch using JavaScript and the React library to provide a medium to showcase my skills",
-    "skills":[ "ReactJS", "NodeJS"],
-    "demo": "",
-    "source": "https://github.com/Fawazak/github-portfolio/tree/8c0fdbf6704d83a2826833637373e28aa4fe4fe5/Assignment2Final"
+    title: "Personal Portfolio",
+  description: "A fully custom portfolio site built from scratch with a dark glassmorphism aesthetic, light/dark mode, smooth CSS animations, and a contact form.",
+  skills: ["React", "CSS", "EmailJS"],
+  imageSrc: require("../assets/portfolio-thumb.png"),
+//   vidSrc: require("../assets/portfolio.mp4"),
+  source: "https://github.com/Fawazak/portfolio"
 },
 {
     "title": "Classification of Handwritten Digits",

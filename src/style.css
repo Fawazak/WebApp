@@ -2,53 +2,66 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    background: transparent;
-    font-family: 'Poppins', sans-serif;
-    
+/* ── Theme variables ── */
+:root {
+  --bg:                  #080810;
+  --bg-card:             rgba(255, 255, 255, 0.04);
+  --bg-card-hover:       rgba(139, 250, 150, 0.08);
+  --purple:              #8bfa98;
+  --purple-deep:         #28d934;
+  --purple-dim:          rgba(148, 250, 139, 0.15);
+  --purple-border:       rgba(139, 250, 165, 0.2);
+  --purple-border-hover: rgba(167, 139, 250, 0.4);
+  --text:                #f0eeff;
+  --text-dim:            rgba(240, 238, 255, 0.45);
+  --text-faint:          rgba(240, 238, 255, 0.25);
+  --blob-opacity:        0.18;
+  --fade-edge:           #080810;
+  --glass-bg:            rgba(255, 255, 255, 0.04);
+  --glass-border:        rgba(167, 139, 250, 0.18);
+  --glass-shadow:        rgba(0, 0, 0, 0.6);
+}
 
+:root.light {
+  --bg:                  #dcdbe7;
+  --bg-card:             rgba(255, 255, 255, 0.8);
+  --bg-card-hover:       rgba(124, 58, 237, 0.08);
+  --purple:              #7c3aed;
+  --purple-deep:         #5b21b6;
+  --purple-dim:          rgba(124, 58, 237, 0.1);
+  --purple-border:       rgba(124, 58, 237, 0.2);
+  --purple-border-hover: rgba(124, 58, 237, 0.5);
+  --text:                #0d0d1a;
+  --text-dim:            rgba(13, 13, 26, 0.55);
+  --text-faint:          rgba(13, 13, 26, 0.25);
+  --blob-opacity:        0.08;
+  --fade-edge:           #d8d7db;
+  --glass-bg:            rgba(255, 255, 255, 0.7);
+  --glass-border:        rgba(124, 58, 237, 0.18);
+  --glass-shadow:        rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
 }
 
 body {
-    background: rgb(244, 240, 221);
-    overflow-x: hidden;
-    overflow-y: scroll;
-}
-#tsparticles {
-    /* position: relative;
-    width: 23%; */
-    height: 700px;
-    overflow: hidden;
-    z-index: -3;
-    /* border-radius: 1000%;
-      */
-    /* margin-bottom: 300rem; */
-    /* padding: 0;
-    top: -480px;
-    left: 140px; */
-
-    /* 
-     */
-  } 
-  #tsparticles2 {
-    position: absolute;
-    
-    top: 186.5rem;
-    left: 280px;
-    height: 60rem;
-    width: 59.5rem;
-    overflow: hidden; 
-    border-radius: 1000%;
-    
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  overflow-y: scroll;
+  transition: background 0.4s, color 0.4s;
 }
 
-@font-face {
-    font-family: "Light";   /*Can be any text*/
-    src: local("blow"),
-      url("./fonts/blow.ttf") format("truetype");
-  }
-   
+::selection {
+  background: var(--purple-dim);
+  color: var(--text);
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--purple-border); border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: var(--purple); }

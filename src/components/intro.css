@@ -1,87 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400&display=swap');
 
-#intro{
-   
-    width: 100vw;
-    max-width: 75rem;
-    margin: 0 auto;
-    overflow: hidden;
-    position: relative;
-    left: 100px;
-    font-family: "Light";
-}
-.logo{
-
-    width: 40rem;
-    padding: 5rem;
-    object-fit: cover;
-    z-index: -1;
-}
-.introContent{
-    /* height: 100vw;
-    width: 100vw; */
-    left: 41rem;
-    bottom: 14rem;
-    position: relative;
-    padding: 2rem;
-    font-size: 3rem;
-    font-weight: 700;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    z-index: 2rem;
-    
-}
-.title{
-    /* bottom: 4rem; */
-    position: relative;
-    font-size: 1.75rem;
-    font-weight: 100;
-    color: rgb(106, 106, 106);
-}
-.about{
-    /* bottom: 6rem; */
-    position: relative;
-    font-size: 17px;
-    max-width: 45rem;
-    font-weight: 100;
-    letter-spacing: 1px;
+.intro-root {
+  min-height: 100vh;
+  width: 100%;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Syne', sans-serif;
+  overflow: hidden;
+  position: relative;
+  transition: background 0.4s;
 }
 
-.begin{
-    height: 22rem;
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: var(--blob-opacity);
+  pointer-events: none;
+}
+.blob-1 {
+  width: 520px; height: 520px;
+  background: var(--purple);
+  top: -100px; left: -120px;
+  animation: drift1 14s ease-in-out infinite alternate;
+}
+.blob-2 {
+  width: 380px; height: 380px;
+  background: var(--purple-deep);
+  bottom: -80px; right: -60px;
+  animation: drift2 18s ease-in-out infinite alternate;
+}
+.blob-3 {
+  width: 260px; height: 260px;
+  background: var(--purple);
+  top: 50%; right: 20%;
+  opacity: calc(var(--blob-opacity) * 0.6);
+  animation: drift3 12s ease-in-out infinite alternate;
 }
 
+@keyframes drift1 { from { transform: translate(0,0) scale(1); } to { transform: translate(60px,40px) scale(1.1); } }
+@keyframes drift2 { from { transform: translate(0,0) scale(1); } to { transform: translate(-50px,-30px) scale(1.08); } }
+@keyframes drift3 { from { transform: translate(0,0); } to { transform: translate(30px,-40px); } }
 
-.name{
-    color: rgb(144, 175, 142);
-    font-size: 3rem;
+.grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--purple-border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--purple-border) 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity: 0.3;
+  pointer-events: none;
 }
 
-::-moz-selection {
-    background: #AFAFAF;
-  }
-  ::-webkit-selection {
-    background: #AFAFAF;
-  }
-  ::selection {
-    background: rgb(74, 109, 72);
-    color: rgb(192, 229, 192);
-    
-  }
-  
-  @media screen and (max-width: 720px){
-    .logo{
-        display: flex;
-    }
-    .name{
-       font-size: 1.8rem;
-       display: flex;
-    }
-    
-    
+.glass-card {
+  position: relative;
+  z-index: 10;
+  background: var(--glass-bg);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  padding: 64px 72px;
+  max-width: 640px;
+  width: 90%;
+  box-shadow:
+    0 0 0 1px var(--purple-dim) inset,
+    0 32px 80px var(--glass-shadow),
+    0 0 60px var(--purple-dim);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.9s cubic-bezier(.22,1,.36,1), transform 0.9s cubic-bezier(.22,1,.36,1);
 }
-/* @font-face {
-font-family: "Light";   /*Can be any text*/
-/* src: local("blow"),
-    url("../fonts/blow.ttf") format("truetype");
-    */
+.glass-card.visible { opacity: 1; transform: translateY(0); }
+
+.card-accent {
+  position: absolute;
+  top: 0; left: 10%; right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--purple), transparent);
+  border-radius: 1px;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--purple-dim);
+  border: 1px solid var(--purple-border);
+  border-radius: 999px;
+  padding: 4px 14px;
+  font-family: 'DM Mono', monospace;
+  font-size: 15px;
+  color: var(--purple);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  opacity: 0;
+  animation: fadeUp 0.7s 0.4s cubic-bezier(.22,1,.36,1) forwards;
+}
+.tag-dot {
+  width: 6px; height: 6px;
+  background: var(--purple);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+.name {
+  font-size: clamp(2.2rem, 5vw, 3rem);
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeUp 0.7s 0.6s cubic-bezier(.22,1,.36,1) forwards;
+}
+.name-accent { color: var(--purple); }
+
+.typed-wrap {
+  font-family: 'DM Mono', monospace;
+  font-size: 1.05rem;
+  color: var(--text-dim);
+  font-weight: 300;
+  min-height: 1.6rem;
+  margin-bottom: 36px;
+  letter-spacing: 0.02em;
+  opacity: 0;
+  animation: fadeUp 0.7s 0.8s cubic-bezier(.22,1,.36,1) forwards;
+}
+.cursor {
+  display: inline-block;
+  width: 2px; height: 1em;
+  background: var(--purple);
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  animation: blink 1s step-end infinite;
+}
+
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, var(--purple-border), transparent);
+  margin-bottom: 36px;
+  opacity: 0;
+  animation: fadeUp 0.7s 1s cubic-bezier(.22,1,.36,1) forwards;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  opacity: 0;
+  animation: fadeUp 0.7s 1.1s cubic-bezier(.22,1,.36,1) forwards;
+}
+.nav-link {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  text-decoration: none;
+  transition: color 0.2s;
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 0; height: 1px;
+  background: var(--purple);
+  transition: width 0.3s;
+}
+.nav-link:hover { color: var(--purple); }
+.nav-link:hover::after { width: 100%; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.7); }
+}
+
+@media (max-width: 600px) {
+  .glass-card { padding: 40px 32px; }
+  .nav-links  { gap: 20px; flex-wrap: wrap; }
+}

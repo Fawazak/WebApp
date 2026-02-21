@@ -1,61 +1,142 @@
-.navbar{
-    height: 5rem;
-    width: 100%;
-    /* max-width: 85rem; */
-    margin:auto;
-    padding: 1rem 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: sticky;
-    top: 0;
-    border-radius: 10;
-    z-index: 3;
-    text-align: center;
-    transition:  0.5s;
-    background-color: rgb(144, 175, 142);
-    /* overflow-x: hidden; */
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&display=swap');
+
+.navbar {
+  height: 5rem;
+  width: 100%;
+  padding: 0 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: background 0.4s, box-shadow 0.4s, border-color 0.4s;
+  background: transparent;
+  border-bottom: 1px solid transparent;
 }
-.menu{
-    margin: 0 auto;
-    display: flex;
-   
-    
+.navbar.scrolled {
+  background: rgba(8, 8, 16, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--purple-border);
+  box-shadow: 0 4px 30px var(--glass-shadow);
+}
+:root.light .navbar.scrolled {
+  background: rgba(244, 243, 255, 0.8);
 }
 
-.item{
-    font-size: 21px;
-    margin: 5rem ;
-    cursor :pointer;
-    transition:  0.4s;
-    
-}
-.navbar:hover{
-    background-color: rgb(104, 141, 104)
-}
-.item:hover{
-    color: rgb(244, 240, 221);
-    padding-bottom: 0.5rem;
-    border-bottom: 3px solid rgb(244, 240, 221);
+.menu { display: flex; align-items: center; gap: 2.5rem; }
 
+.item {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: color 0.2s;
+  position: relative;
+  padding-bottom: 4px;
+}
+.item::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 1px;
+  background: var(--purple);
+  transition: width 0.3s cubic-bezier(.22,1,.36,1);
+}
+.item:hover, .item.active { color: var(--purple); }
+.item:hover::after, .item.active::after { width: 100%; }
+
+/* ── Theme toggle ── */
+.theme-toggle {
+  position: absolute;
+  right: 2.5rem;
+  display: flex;
+  align-items: center;
+  background: var(--purple-dim);
+  border: 1px solid var(--purple-border);
+  border-radius: 999px;
+  padding: 5px 14px;
+  gap: 6px;
+  cursor: pointer;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--purple);
+  transition: background 0.2s, color 0.2s;
+}
+.theme-toggle:hover { background: var(--purple-border); }
+
+/* ── Mobile hamburger ── */
+.mob-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 30px;
+  position: absolute;
+  right: 5rem;
+}
+.burger, .burger::before, .burger::after {
+  display: block;
+  width: 22px; height: 1.5px;
+  background: var(--text-dim);
+  transition: transform 0.3s, opacity 0.3s;
+  position: relative;
+}
+.burger::before, .burger::after { content: ''; position: absolute; left: 0; }
+.burger::before { top: -6px; }
+.burger::after  { top:  6px; }
+.burger.open { background: transparent; }
+.burger.open::before { transform: rotate(45deg);  top: 0; }
+.burger.open::after  { transform: rotate(-45deg); top: 0; }
+
+/* ── Mobile dropdown ── */
+.mob-dropdown {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 5rem; right: 1rem;
+  width: 180px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px var(--glass-shadow);
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity 0.25s, transform 0.25s;
+  pointer-events: none;
+}
+.mob-dropdown.show {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+.mob-item {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  padding: 14px 20px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  border-bottom: 1px solid var(--purple-border);
+}
+.mob-item:last-child { border-bottom: none; }
+.mob-item:hover, .mob-item.active {
+  background: var(--purple-dim);
+  color: var(--purple);
 }
 
-.mobMenu{
-    display: none;
-    height: 40px;
-}
-
-/* .active{
-    color: rgb(244, 240, 221);;
-} */
-
-@media screen and (max-width: 720px){
-    .mobMenu{
-        display: flex;
-    }
-    .menu{
-        display: none;
-    }
-    
-    
+@media screen and (max-width: 720px) {
+  .menu         { display: none; }
+  .mob-menu-btn { display: block; }
+  .theme-toggle { right: 1rem; }
 }
