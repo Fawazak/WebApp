@@ -16,9 +16,20 @@ const Portfolio = () => {
   }, []);
 
   const handleMouseOver = (e) => {
-    setTimeout(() => e.target.play(), 100);
+    const video = e.target;
+    setTimeout(() => {
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {});
+      }
+    }, 100);
   };
-  const handleMouseOut = (e) => e.target.load();
+
+  const handleMouseOut = (e) => {
+    const video = e.target;
+    video.pause();
+    video.load();
+  };
 
   return (
     <section id="projects" className="portfolio-section" ref={ref}>
@@ -33,43 +44,68 @@ const Portfolio = () => {
         <div className="hscroll-fade-right" />
 
         <div className="hscroll-track">
-          {data.map((project, id) => (
-            <div className="project-card" key={id}>
-              {/* Visual / video */}
-              <div className="project-visual">
-                <video
-                  className="project-video"
-                  poster={project.imageSrc}
-                  src={project.vidSrc}
-                  onMouseOver={handleMouseOver}
-                  onMouseOut={handleMouseOut}
-                  muted
-                />
-                {/* <div className="project-num">0{id + 1}</div> */}
-              </div>
-
-              {/* Content */}
-              <div className="project-body">
-                <h3 className="project-title">{project.title}</h3>
-                <p className="project-desc">{project.description}</p>
-
-                <div className="project-skills">
-                  {project.skills.map((skill, sid) => (
-                    <span className="skill-pill" key={sid}>{skill}</span>
-                  ))}
+          {data.map((project, id) => {
+            const inner = (
+              <>
+                <div className="project-visual">
+                  <video
+                    className="project-video"
+                    poster={project.imageSrc}
+                    src={project.vidSrc}
+                    onMouseOver={handleMouseOver}
+                    onMouseOut={handleMouseOut}
+                    muted
+                  />
+                  {project.liveUrl && (
+                    <div className="project-live-badge">Live ↗</div>
+                  )}
                 </div>
 
-                {/* <a
-                  className="project-link"
-                  href={project.source}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  GitHub →
-                </a> */}
+                <div className="project-body">
+                  <h3 className="project-title">{project.title}</h3>
+                  <p className="project-desc">{project.description}</p>
+
+                  <div className="project-skills">
+                    {project.skills.map((skill, sid) => (
+                      <span className="skill-pill" key={sid}>{skill}</span>
+                    ))}
+                  </div>
+
+                  <div className="project-links">
+                    {project.source && (
+                      <a
+                        className="project-link"
+                        href={project.source}
+                        target="_blank"
+                        rel="noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        GitHub →
+                      </a>
+                    )}
+                    
+                    
+                  </div>
+                </div>
+              </>
+            );
+
+            return project.liveUrl ? (
+              <a
+                key={id}
+                className="project-card"
+                href={project.liveUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {inner}
+              </a>
+            ) : (
+              <div key={id} className="project-card">
+                {inner}
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
